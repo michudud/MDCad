@@ -3,48 +3,21 @@ import ReactDOM from "react-dom";
 import { useState } from "react";
 import DrawArea from "./DrawArea";
 import ToolsMenu from "./ToolsMenu";
+import DrawingSettingsContext from "./DrawingSettingsContext";
 
 const App = () => {
-  const [activeTool, setActiveTool] = useState("Line");
-  const [gridStatus, setGridStatus] = useState({
-    status: true,
-    size: 50,
-    snap: true,
+  const drawingSettings = useState({
+    activeTool: "Line",
+    gridStatus: true,
+    gridSize: 50,
+    gridSnap: true,
   });
 
-  const activateTool = (e) => {
-    setActiveTool(e.target.parentNode.textContent);
-  };
-
-  const turnGrid = () => {
-    if (gridStatus.status) {
-      setGridStatus({ ...gridStatus, status: !gridStatus.status, snap: false });
-    } else {
-      setGridStatus({ ...gridStatus, status: !gridStatus.status });
-    }
-  };
-
-  const changeGridSize = (e) => {
-    setGridStatus({
-      ...gridStatus,
-      size: parseInt(e.target.value),
-    });
-  };
-  const turnGridSnap = () => {
-    setGridStatus({ ...gridStatus, snap: !gridStatus.snap });
-  };
-
   return (
-    <div>
-      <ToolsMenu
-        activeTool={activeTool}
-        activateTool={activateTool}
-        turnGrid={turnGrid}
-        changeGridSize={changeGridSize}
-        turnGridSnap={turnGridSnap}
-      />
-      <DrawArea activeTool={activeTool} gridStatus={gridStatus} />
-    </div>
+    <DrawingSettingsContext.Provider value={drawingSettings}>
+      <ToolsMenu />
+      <DrawArea />
+    </DrawingSettingsContext.Provider>
   );
 };
 

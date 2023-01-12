@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import Grid from "./Grid";
 import SnapCircle from "./SnapCircle";
 import ElementsMenu from "./ElementsMenu";
@@ -11,13 +11,23 @@ import {
   Arc,
   ArcLine,
 } from "./DrawingTools";
+import DrawingSettingsContext from "./DrawingSettingsContext";
 
-const DrawArea = ({ activeTool, gridStatus }) => {
+const DrawArea = () => {
   const [childrenComponents, setChildrenComponents] = useState([]);
   const [positions, setPositions] = useState({});
   const [activePositions, setActivePosition] = useState({});
   const [activeRender, setActiveRender] = useState([]);
   const [activeSnap, setActiveSnap] = useState([]);
+  const [drawingSettings, _] = useContext(DrawingSettingsContext); // eslint-disable-line no-unused-vars
+
+  const activeTool = drawingSettings.activeTool;
+  const gridStatus = {
+    status: drawingSettings.gridStatus,
+    size: drawingSettings.gridSize,
+    snap: drawingSettings.gridSnap,
+  };
+
   let svgLeft, svgTop;
 
   const toolSelector = () => {

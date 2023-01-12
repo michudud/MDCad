@@ -1,6 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext } from "react";
+import DrawingSettingsContext from "./DrawingSettingsContext";
 
-const GridMenu = ({ turnGrid, turnGridSnap, changeGridSize }) => {
+const GridMenu = () => {
+  const [gridSettings, setGridSettings] = useContext(DrawingSettingsContext);
   const statusRef = useRef();
   const gridRef = useRef();
 
@@ -16,7 +18,20 @@ const GridMenu = ({ turnGrid, turnGridSnap, changeGridSize }) => {
       <div className="grid-element">
         <input
           type="checkbox"
-          onChange={turnGrid}
+          onChange={() => {
+            if (gridSettings.gridStatus) {
+              setGridSettings({
+                ...gridSettings,
+                gridStatus: !gridSettings.gridStatus,
+                gridSnap: false,
+              });
+            } else {
+              setGridSettings({
+                ...gridSettings,
+                gridStatus: !gridSettings.gridStatus,
+              });
+            }
+          }}
           defaultChecked
           ref={statusRef}
         />
@@ -27,7 +42,12 @@ const GridMenu = ({ turnGrid, turnGridSnap, changeGridSize }) => {
       <div className="grid-element">
         <input
           type="checkbox"
-          onChange={turnGridSnap}
+          onChange={() => {
+            setGridSettings({
+              ...gridSettings,
+              gridSnap: !gridSettings.gridSnap,
+            });
+          }}
           defaultChecked
           ref={gridRef}
         />
@@ -43,7 +63,10 @@ const GridMenu = ({ turnGrid, turnGridSnap, changeGridSize }) => {
           max="100"
           step="10"
           onChange={(e) => {
-            changeGridSize(e);
+            setGridSettings({
+              ...gridSettings,
+              gridSize: parseInt(e.target.value),
+            });
           }}
         ></input>
       </div>

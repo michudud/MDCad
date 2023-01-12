@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Tool from "./Tool";
 import { useState, useRef, useEffect } from "react";
 import MenuIcon from "./MenuIcon";
+import DrawingSettingsContext from "./DrawingSettingsContext";
 
-const ToolsList = ({ tool, activateTool, activeTool }) => {
+const ToolsList = ({ tool }) => {
   const [openOptions, setOpenOptions] = useState(false);
   const [activeIcon, setActiveIcon] = useState(tool.name);
+  const [toolSettings, _] = useContext(DrawingSettingsContext); // eslint-disable-line no-unused-vars
 
   const changeIcon = (e) => {
     setActiveIcon(e.target.parentNode.textContent);
@@ -33,16 +35,16 @@ const ToolsList = ({ tool, activateTool, activeTool }) => {
   return (
     <li className="ToolsList" ref={ref}>
       <svg
-        className={`svg-menu-icon ${activeIcon == activeTool ? "active" : ""}`}
+        className={`svg-menu-icon ${
+          activeIcon == toolSettings.activeTool ? "active" : ""
+        }`}
         onClick={() => setOpenOptions((prev) => !prev)}
       >
         <MenuIcon tool={activeIcon} />
       </svg>
       <Tool
-        activeTool={activeTool}
         tool_option={tool.options}
         openOptions={openOptions}
-        activateTool={activateTool}
         closeMenuAfterChoose={closeMenuAfterChoose}
         changeIcon={changeIcon}
       />

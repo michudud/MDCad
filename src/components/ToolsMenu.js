@@ -3,13 +3,7 @@ import ToolsList from "./ToolsList";
 import GridMenu from "./GridMenu";
 import DocumentControlMenu from "./DocumentControlMenu";
 
-const ToolsMenu = ({
-  activeTool,
-  activateTool,
-  turnGrid,
-  changeGridSize,
-  turnGridSnap,
-}) => {
+const ToolsMenu = () => {
   const Tools = [
     {
       name: "Line",
@@ -37,18 +31,9 @@ const ToolsMenu = ({
     <div className="ToolsMenu">
       <ul className="ToolsMenuList">
         {Tools.map((tool, index) => (
-          <ToolsList
-            key={index}
-            tool={tool}
-            activateTool={activateTool}
-            activeTool={activeTool}
-          />
+          <ToolsList key={index} tool={tool} />
         ))}
-        <GridMenu
-          turnGrid={turnGrid}
-          changeGridSize={changeGridSize}
-          turnGridSnap={turnGridSnap}
-        />
+        <GridMenu />
         <DocumentControlMenu />
       </ul>
     </div>
