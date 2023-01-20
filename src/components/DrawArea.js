@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import Grid from "./Grid";
 import SnapCircle from "./SnapCircle";
 import ElementsMenu from "./ElementsMenu";
+import DrawingSettingsContext from "./DrawingSettingsContext";
 import {
   Line,
   Rect,
@@ -11,7 +12,6 @@ import {
   Arc,
   ArcLine,
 } from "./DrawingTools";
-import DrawingSettingsContext from "./DrawingSettingsContext";
 
 const DrawArea = () => {
   const [childrenComponents, setChildrenComponents] = useState([]);
@@ -58,8 +58,6 @@ const DrawArea = () => {
       let addToSvg = React.createElement(toolSelector(), {
         key: activeTool + new Date().getTime(),
         positions: positions,
-        gridSnapper: gridSnapper,
-        snap: gridStatus.snap,
       });
       setChildrenComponents([...childrenComponents, addToSvg]);
       setPositions({});
@@ -67,8 +65,6 @@ const DrawArea = () => {
       let addToSvg = React.createElement(toolSelector(), {
         key: activeTool + new Date().getTime(),
         positions: positions,
-        gridSnapper: gridSnapper,
-        snap: gridStatus.snap,
       });
       setChildrenComponents([...childrenComponents, addToSvg]);
       setPositions({});
