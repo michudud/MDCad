@@ -7,7 +7,7 @@ interface ToolProps {
   tool_option: string[];
   openOptions: boolean;
   closeMenuAfterChoose(): void;
-  changeIcon(e: React.MouseEvent<HTMLOrSVGElement>): void;
+  changeIcon(e: React.MouseEvent<SVGElement>): void;
 }
 
 const Tool = ({
@@ -30,7 +30,7 @@ const Tool = ({
                 if (target.parentNode) {
                   setToolSettings({
                     ...toolSettings,
-                    activeTool: target.parentNode.textContent as string,
+                    activeTool: target.parentNode.textContent + "",
                   });
                 }
                 closeMenuAfterChoose();

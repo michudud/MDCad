@@ -8,13 +8,13 @@ interface SettingsContextType {
 }
 
 const DrawingSettingsContext = createContext<
-  [SettingsContextType, (drawingSettings: SettingsContextType) => void] // |null
+  [SettingsContextType, (drawingSettings: SettingsContextType) => void]
 >([
   {
     activeTool: "Line",
     gridStatus: true,
     gridSize: 50,
-    gridSnap: true, //cale na null
+    gridSnap: true,
   },
   () => {},
 ]);

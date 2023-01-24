@@ -30,7 +30,7 @@ const ElementsMenu = ({
                       <label htmlFor={attr}>{attr}:</label>
                       <input
                         type={type}
-                        defaultValue={inComp.getAttribute(attr) as string}
+                        defaultValue={inComp.getAttribute(attr) + ""}
                         onChange={(e) => {
                           inComp.setAttribute(attr, e.target.value);
                         }}

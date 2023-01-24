@@ -16,10 +16,10 @@ const ToolsList = ({ tool }: ToolsListProps) => {
   const [activeIcon, setActiveIcon] = useState(tool.name);
   const [toolSettings, _] = useContext(DrawingSettingsContext); // eslint-disable-line @typescript-eslint/no-unused-vars
 
-  const changeIcon = (e: React.MouseEvent<HTMLOrSVGElement>) => {
-    const target = e.target as SVGAElement;
+  const changeIcon = (e: React.MouseEvent<SVGElement>) => {
+    const target = e.target as SVGElement;
     if (target.parentNode) {
-      setActiveIcon(target.parentNode.textContent as string);
+      setActiveIcon(target.parentNode.textContent + "");
     }
   };
   const ref = useRef<HTMLLIElement>(null);

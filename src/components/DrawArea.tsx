@@ -46,7 +46,7 @@ const DrawArea = () => {
 
   let svgLeft: number, svgTop: number;
 
-  const toolSelector = (): any => {
+  const toolSelector = (activeTool: string): any => {
     switch (activeTool) {
       case "Line":
         return Line;
@@ -76,14 +76,14 @@ const DrawArea = () => {
       Object.keys(positions).length === 4 &&
       activeTool !== "Arc"
     ) {
-      const addToSvg = React.createElement(toolSelector(), {
+      const addToSvg = React.createElement(toolSelector(activeTool), {
         key: activeTool + new Date().getTime(),
         positions: positions,
       });
       setChildrenComponents([...childrenComponents, addToSvg]);
       setPositions(null);
     } else if (positions && Object.keys(positions).length === 6) {
-      const addToSvg = React.createElement(toolSelector(), {
+      const addToSvg = React.createElement(toolSelector(activeTool), {
         key: activeTool + new Date().getTime(),
         positions: positions,
       });
@@ -174,7 +174,7 @@ const DrawArea = () => {
         }
         if (activeTool !== "Arc") {
           setActiveRender([
-            React.createElement(toolSelector(), {
+            React.createElement(toolSelector(activeTool), {
               key: activeTool + new Date().getTime(),
               positions: activePositions,
             }),
@@ -201,7 +201,7 @@ const DrawArea = () => {
           });
         }
         setActiveRender([
-          React.createElement(toolSelector(), {
+          React.createElement(toolSelector(activeTool), {
             key: activeTool + new Date().getTime(),
             positions: activePositions,
           }),
