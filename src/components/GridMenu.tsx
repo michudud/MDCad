@@ -4,11 +4,16 @@ import DrawingSettingsContext from "./DrawingSettingsContext";
 const GridMenu = () => {
   const [gridSettings, setGridSettings] = useContext(DrawingSettingsContext);
   const statusRef = useRef<HTMLInputElement>(null);
-  const gridRef = useRef<HTMLInputElement>(null);
+  const snapRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (!statusRef?.current?.checked && gridRef.current) {
-      gridRef.current.checked = false;
+    if (snapRef.current) {
+      if (!statusRef?.current?.checked) {
+        snapRef.current.checked = false;
+        snapRef.current.disabled = true;
+      } else {
+        snapRef.current.disabled = false;
+      }
     }
   });
 
@@ -49,7 +54,7 @@ const GridMenu = () => {
             });
           }}
           defaultChecked
-          ref={gridRef}
+          ref={snapRef}
         />
         <label htmlFor="grid-snap" className="grid-label">
           Snap to grid
