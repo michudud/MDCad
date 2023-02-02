@@ -403,6 +403,30 @@ const MenuIcon = ({ tool }: { tool: string }): JSX.Element | null => {
           <rect x="0" y="0" width="120" height="118" fill="transparent" />
         </g>
       );
+    case "OptionsLeftArrow":
+      return (
+        <g>
+          <circle cx="9" cy="9" r="8" fill="lightgrey" />
+          <polyline
+            points="12,5 6,9 12,13"
+            fill="none"
+            stroke="grey"
+            strokeWidth="2"
+          />
+        </g>
+      );
+    case "OptionsRightArrow":
+      return (
+        <g>
+          <circle cx="9" cy="9" r="8" fill="grey" />
+          <polyline
+            points="6,5 12,9 6,13"
+            fill="none"
+            stroke="lightgrey"
+            strokeWidth="2"
+          />
+        </g>
+      );
   }
   return null;
 };
