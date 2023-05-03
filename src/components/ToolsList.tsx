@@ -16,7 +16,7 @@ const ToolsList = ({ tool }: ToolsListProps) => {
   const [activeIcon, setActiveIcon] = useState(tool.name);
   const [toolSettings, _] = useContext(DrawingSettingsContext); // eslint-disable-line @typescript-eslint/no-unused-vars
 
-  const changeIcon = (e: React.MouseEvent<SVGElement>) => {
+  const changeIcon = (e: React.MouseEvent<HTMLButtonElement>) => {
     const target = e.target as SVGElement;
     if (target.parentNode) {
       setActiveIcon(target.parentNode.textContent + "");
@@ -46,14 +46,19 @@ const ToolsList = ({ tool }: ToolsListProps) => {
 
   return (
     <li className="ToolsList" ref={ref}>
-      <svg
-        className={`svg-menu-icon ${
-          activeIcon == toolSettings.activeTool ? "active" : ""
-        }`}
+      <button
+        className="button-menu-icon"
         onClick={() => setOpenOptions((prev) => !prev)}
+        data-testid="toolsListButton"
       >
-        <MenuIcon tool={activeIcon} />
-      </svg>
+        <svg
+          className={`svg-menu-icon ${
+            activeIcon == toolSettings.activeTool ? "active" : ""
+          }`}
+        >
+          <MenuIcon tool={activeIcon} />
+        </svg>
+      </button>
       <Tool
         tool_option={tool.options}
         openOptions={openOptions}

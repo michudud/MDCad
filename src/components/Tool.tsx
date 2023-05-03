@@ -7,7 +7,7 @@ interface ToolProps {
   tool_option: string[];
   openOptions: boolean;
   closeMenuAfterChoose(): void;
-  changeIcon(e: React.MouseEvent<SVGElement>): void;
+  changeIcon(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
 const Tool = ({
@@ -19,12 +19,12 @@ const Tool = ({
   const [toolSettings, setToolSettings] = useContext(DrawingSettingsContext);
 
   return (
-    <ul className={`Tool ${openOptions ? "open" : ""}`}>
+    <ul className={`Tool ${openOptions ? "open" : ""}`} data-testid="toolUl">
       {tool_option.map((option, index) =>
         option !== toolSettings.activeTool ? (
           <li key={index} className="tool-item">
-            <svg
-              className="svg-menu-icon"
+            <button
+              className="button-menu-icon"
               onClick={(e) => {
                 const target = e.target as Node;
                 if (target.parentNode) {
@@ -37,8 +37,10 @@ const Tool = ({
                 changeIcon(e);
               }}
             >
-              <MenuIcon tool={option} />
-            </svg>
+              <svg className="svg-menu-icon" data-testid="toolSvg">
+                <MenuIcon tool={option} />
+              </svg>
+            </button>
           </li>
         ) : null
       )}
