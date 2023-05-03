@@ -1,0 +1,20 @@
+.controlMenu {
+  margin-left: auto;
+}
+
+.control-menu-button {
+  height: 120px;
+  width: 122px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+}
+
+.menu-button-svg {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  background-color: white;
+}

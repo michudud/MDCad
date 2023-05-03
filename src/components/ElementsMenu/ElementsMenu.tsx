@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import MenuIcon from "./MenuIcon";
+import "./ElementsMenu.style.css";
+import { useState } from "react";
+import MenuIcon from "../../icons/MenuIcon";
 
 const ElementsMenu = ({
   childrenComponents,

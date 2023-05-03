@@ -1,0 +1,13 @@
+.ToolsMenu {
+  height: 140px;
+  min-width: 1050px;
+  margin: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.ToolsMenuList {
+  display: flex;
+  list-style-type: none;
+}

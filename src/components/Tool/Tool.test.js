@@ -4,7 +4,7 @@
 
 import { expect, test } from "@jest/globals";
 import { render } from "@testing-library/react";
-import Tool from "../components/Tool";
+import Tool from "./Tool";
 
 test("displays right icon for tool", async () => {
   const tool = render(<Tool tool_option={["Rect"]} />);

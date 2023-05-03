@@ -1,0 +1,38 @@
+.Tool {
+  display: none;
+}
+
+.Tool.open {
+  display: block;
+  list-style-type: none;
+  position: absolute;
+  z-index: 10;
+}
+
+.button-menu-icon {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  height: 120px;
+  width: 122px;
+  margin: 10px 10px 0 10px;
+}
+
+.svg-menu-icon {
+  height: 120px;
+  width: 122px;
+  /* margin: 10px 10px 0 10px; */
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.svg-menu-icon:hover,
+.svg-menu-icon.active {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25),
+    0px 0px 8px 4px rgba(97, 216, 252, 0.5) inset;
+}

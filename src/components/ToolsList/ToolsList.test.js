@@ -4,7 +4,7 @@
 
 import { expect, test } from "@jest/globals";
 import { render } from "@testing-library/react";
-import ToolsList from "../components/ToolsList";
+import ToolsList from "./ToolsList";
 
 test("lets open tools list", async () => {
   const toolsList = render(

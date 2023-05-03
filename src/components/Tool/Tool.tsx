@@ -1,7 +1,8 @@
+import "./Tool.style.css";
 import React from "react";
 import { useContext } from "react";
-import DrawingSettingsContext from "./DrawingSettingsContext";
-import MenuIcon from "./MenuIcon";
+import DrawingSettingsContext from "../../context/DrawingSettingsContext";
+import MenuIcon from "../../icons/MenuIcon";
 
 interface ToolProps {
   tool_option: string[];

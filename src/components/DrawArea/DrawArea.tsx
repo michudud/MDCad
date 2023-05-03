@@ -1,8 +1,9 @@
+import "./DrawArea.style.css";
 import React, { useState, useEffect, useRef, useContext } from "react";
-import Grid from "./Grid";
-import SnapCircle from "./SnapCircle";
-import ElementsMenu from "./ElementsMenu";
-import DrawingSettingsContext from "./DrawingSettingsContext";
+import Grid from "./AreaElements/Grid";
+import SnapCircle from "./AreaElements/SnapCircle";
+import ElementsMenu from "../ElementsMenu";
+import DrawingSettingsContext from "../../context/DrawingSettingsContext";
 import {
   Line,
   Rect,

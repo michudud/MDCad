@@ -1,7 +1,7 @@
-import React from "react";
-import ToolsList from "./ToolsList";
-import GridMenu from "./GridMenu";
-import DocumentControlMenu from "./DocumentControlMenu";
+import "./ToolsMenu.style.css";
+import ToolsList from "../ToolsList";
+import GridMenu from "../GridMenu";
+import DocumentControlMenu from "../DocumentControlMenu";
 
 const ToolsMenu = () => {
   const Tools = [

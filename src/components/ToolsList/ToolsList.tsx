@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import Tool from "./Tool";
-import { useState, useRef, useEffect } from "react";
-import MenuIcon from "./MenuIcon";
-import DrawingSettingsContext from "./DrawingSettingsContext";
+import "./ToolsList.style.css";
+import { useState, useRef, useEffect, useContext } from "react";
+import DrawingSettingsContext from "../../context/DrawingSettingsContext";
+import MenuIcon from "../../icons/MenuIcon";
+import Tool from "../Tool";
 
 interface ToolsListProps {
   tool: {

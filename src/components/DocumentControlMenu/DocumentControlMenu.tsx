@@ -1,6 +1,6 @@
-import React from "react";
+import "./DocumentControlMenu.style.css";
 import { saveSvgAsPng } from "save-svg-as-png";
-import MenuIcon from "./MenuIcon";
+import MenuIcon from "../../icons/MenuIcon";
 
 const DocumentControlMenu = () => {
   return (

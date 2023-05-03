@@ -1,5 +1,3 @@
-import React from "react";
-
 const MenuIcon = ({ tool }: { tool: string }): JSX.Element | null => {
   switch (tool) {
     case "Line":

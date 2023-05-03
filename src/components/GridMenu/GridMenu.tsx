@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useContext } from "react";
-import DrawingSettingsContext from "./DrawingSettingsContext";
+import "./GridMenu.style.css";
+import { useEffect, useRef, useContext } from "react";
+import DrawingSettingsContext from "../../context/DrawingSettingsContext";
 
 const GridMenu = () => {
   const [gridSettings, setGridSettings] = useContext(DrawingSettingsContext);
