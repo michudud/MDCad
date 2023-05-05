@@ -1,0 +1,5 @@
+{
+  "moduleNameMapper": {
+    "\\.(css|less|sass|scss)$": "<rootDir>/config/styleMock.js"
+  }
+}
