@@ -1,5 +1,3 @@
-import React from "react";
-
 interface CircleProps {
   positions: {
     last_x: number;
@@ -22,6 +20,3 @@ export const Circle = ({ positions }: CircleProps) => {
     </g>
   );
 };
-
-//export default Circle;
-//export { Circle };

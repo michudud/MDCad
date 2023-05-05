@@ -1,5 +1,3 @@
-import * as React from "react";
-
 interface ArcProps {
   positions: {
     last_x: number;
@@ -39,5 +37,3 @@ export const Arc = ({ positions }: ArcProps) => {
     </g>
   );
 };
-
-//export default Arc;

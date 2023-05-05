@@ -1,5 +1,3 @@
-import React from "react";
-
 interface EllipseProps {
   positions: {
     last_x: number;
@@ -27,5 +25,3 @@ export const Ellipse = ({ positions }: EllipseProps) => {
     </g>
   );
 };
-
-//export default Ellipse;

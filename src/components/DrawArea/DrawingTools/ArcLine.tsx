@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ArcLineProps {
   positions: {
     last_x: number;
@@ -23,5 +21,3 @@ export const ArcLine = ({ positions }: ArcLineProps) => {
     />
   );
 };
-
-//export default ArcLine;

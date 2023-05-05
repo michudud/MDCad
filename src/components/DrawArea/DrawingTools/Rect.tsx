@@ -1,5 +1,3 @@
-import React from "react";
-
 interface RectProps {
   positions: {
     last_x: number;
@@ -41,5 +39,3 @@ export const Rect = ({ positions }: RectProps) => {
     </g>
   );
 };
-
-//export default Rect;

@@ -1,5 +1,3 @@
-import React from "react";
-
 interface LineProps {
   positions: {
     last_x: number;
@@ -23,5 +21,3 @@ export const Line = ({ positions }: LineProps) => {
     </g>
   );
 };
-
-//export default Line;

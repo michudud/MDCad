@@ -1,5 +1,3 @@
-import React from "react";
-
 interface SquareProps {
   positions: {
     last_x: number;
@@ -47,5 +45,3 @@ export const Square = ({ positions }: SquareProps) => {
     </g>
   );
 };
-
-//export default Square;
