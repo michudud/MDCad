@@ -34,6 +34,7 @@ export const Rect = ({ positions }: RectProps) => {
         width={width}
         height={height}
         stroke="black"
+        strokeWidth="1"
         fill="transparent"
       />
     </g>

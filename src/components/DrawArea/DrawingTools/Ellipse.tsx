@@ -20,6 +20,7 @@ export const Ellipse = ({ positions }: EllipseProps) => {
         rx={rx}
         ry={ry}
         stroke="black"
+        strokeWidth="1"
         fill="transparent"
       />
     </g>

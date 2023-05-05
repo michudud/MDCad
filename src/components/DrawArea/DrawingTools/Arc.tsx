@@ -32,6 +32,7 @@ export const Arc = ({ positions }: ArcProps) => {
           ""
         }
         stroke="black"
+        strokeWidth="1"
         fill="transparent"
       />
     </g>

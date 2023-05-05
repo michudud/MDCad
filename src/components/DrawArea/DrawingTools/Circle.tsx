@@ -16,7 +16,14 @@ export const Circle = ({ positions }: CircleProps) => {
   );
   return (
     <g>
-      <circle cx={last_x} cy={last_y} r={r} stroke="black" fill="transparent" />
+      <circle
+        cx={last_x}
+        cy={last_y}
+        r={r}
+        stroke="black"
+        strokeWidth="1"
+        fill="transparent"
+      />
     </g>
   );
 };

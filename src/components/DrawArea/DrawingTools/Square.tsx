@@ -40,6 +40,7 @@ export const Square = ({ positions }: SquareProps) => {
         width={width}
         height={height}
         stroke="black"
+        strokeWidth="1"
         fill="transparent"
       />
     </g>
