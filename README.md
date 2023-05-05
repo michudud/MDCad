@@ -22,9 +22,9 @@ Simple CAD for 2D drawing in React. User can choose from lines and basic shapes 
 
 ### How to open
 
-Install: `npm install`
-Run: `npm run dev`
-Test: `npm test`
+- Install: `npm install`
+- Run: `npm run dev`
+- Test: `npm test`
 
 ### Stack
 
